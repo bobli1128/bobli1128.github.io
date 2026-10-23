@@ -63,6 +63,9 @@ extra_javascript:
   - javascripts/starfield.js
   - javascripts/starfield-init.js
 
+extra:
+  generator: false  # 隐藏页脚 "Made with Material for MkDocs"
+
 nav:
   - 首页: index.md
   - 使用指南:

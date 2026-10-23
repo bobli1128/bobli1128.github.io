@@ -669,3 +669,9 @@ a:hover .text-button span {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+/* hide footer */
+/* mkdocs.yml 已设 extra.generator: false，页脚内部为空，这里把空壳横条一并隐藏 */
+.md-footer {
+  display: none;
+}
