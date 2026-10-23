@@ -1,0 +1,9 @@
+# 虚拟环境
+.venv/
+
+# MkDocs 构建产物
+site/
+
+# 系统文件
+.DS_Store
+Thumbs.db
