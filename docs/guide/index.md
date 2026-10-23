@@ -2,6 +2,23 @@
 
 本节介绍如何在这个文档站里写作、组织和管理文档。
 
+## 本地预览
+
+```bash
+# 创建并激活虚拟环境
+python -m venv .venv
+.venv\Scripts\activate      # Windows
+# source .venv/bin/activate # Linux / macOS
+
+# 安装依赖
+pip install mkdocs-material
+
+# 启动本地预览服务器
+mkdocs serve
+```
+
+然后浏览器打开 <http://127.0.0.1:8000> 即可实时预览。
+
 ## 目录结构
 
 ```text

@@ -8,7 +8,6 @@ theme:
   name: material
   language: zh
   features:
-    - navigation.tabs
     - navigation.sections
     - navigation.expand
     - navigation.top
@@ -19,11 +18,15 @@ theme:
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
+      primary: white
+      accent: teal
       toggle:
         icon: material/weather-sunny
         name: 切换到暗色模式
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
+      primary: black
+      accent: teal
       toggle:
         icon: material/weather-night
         name: 切换到亮色模式
@@ -44,8 +47,21 @@ markdown_extensions:
       anchor_linenums: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
+  - pymdownx.arithmatex:
+      generic: true
   - pymdownx.tasklist:
       custom_checkbox: true
+
+extra_css:
+  - stylesheets/extra.css
+
+# mathjax.js 必须列在 MathJax CDN 脚本之前（先写入 window.MathJax 配置）
+# katex.js 是另一套公式渲染备选方案（KaTeX），与 MathJax 二选一，当前未启用
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js
+  - javascripts/starfield.js
+  - javascripts/starfield-init.js
 
 nav:
   - 首页: index.md
