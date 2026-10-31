@@ -104,8 +104,14 @@ nav:
           - 二分查找与二分答案: algo/binary-search.md
       - 第 6 章 · 简单数据结构:
           - ds/index.md
+          - 结构体：把相关数据打包: ds/struct.md
+          - 栈与队列: ds/stack-queue.md
+          - 链表: ds/linked-list.md
       - 第 7 章 · 搜索入门:
           - search/index.md
+          - DFS：一条道走到黑: search/dfs.md
+          - BFS：层层扩散的水波: search/bfs.md
+          - 剪枝：让搜索跑得更快: search/prune.md
       - 第 8 章 · 动态规划入门:
           - dp/index.md
       - 第 9 章 · 竞赛数学基础:
