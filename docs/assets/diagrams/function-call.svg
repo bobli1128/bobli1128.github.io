@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 250" font-family="'Noto Sans SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#666"/>
+    </marker>
+  </defs>
+  <style>
+    text { font-size: 14px; fill: #1d1d20; }
+    .code { font-family: Consolas, monospace; font-size: 13.5px; }
+    .box { fill: #fff; stroke: #55aea6; stroke-width: 1.5; }
+    .flow { stroke: #666; stroke-width: 1.8; fill: none; marker-end: url(#arr); }
+    .lbl { fill: #3d8d86; font-size: 14px; font-weight: bold; }
+    .name { fill: #55aea6; font-weight: bold; font-size: 16px; }
+  </style>
+  <rect x="0" y="0" width="720" height="250" rx="10" fill="#f5f5f5"/>
+
+  <text class="name" x="140" y="40" text-anchor="middle">main() 主函数</text>
+  <rect class="box" x="40" y="50" width="200" height="130" rx="8"/>
+  <text class="code" x="58" y="78">int main() {</text>
+  <text class="code" x="58" y="100">    int a = 3, b = 8;</text>
+  <text class="code" x="58" y="122" fill="#e67e22">    int m = max2(a, b);</text>
+  <text class="code" x="58" y="144" fill="#999">    // m 拿到了返回值 8</text>
+  <text class="code" x="58" y="166">}</text>
+
+  <text class="name" x="540" y="40" text-anchor="middle">max2() 被调函数</text>
+  <rect class="box" x="440" y="50" width="230" height="130" rx="8"/>
+  <text class="code" x="458" y="78">int max2(int x, int y) {</text>
+  <text class="code" x="458" y="100">    if (x &gt; y) return x;</text>
+  <text class="code" x="458" y="122">    return y;</text>
+  <text class="code" x="458" y="144" fill="#999">    // x=3, y=8</text>
+  <text class="code" x="458" y="166">}</text>
+
+  <line class="flow" x1="245" y1="105" x2="432" y2="105"/>
+  <text class="lbl" x="338" y="92" text-anchor="middle">① 把 a, b 的值复制给 x, y</text>
+
+  <line class="flow" x1="435" y1="160" x2="248" y2="160"/>
+  <text class="lbl" x="338" y="205" text-anchor="middle">② return 把结果 8 送回调用处</text>
+</svg>

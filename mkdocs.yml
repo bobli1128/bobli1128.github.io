@@ -93,8 +93,15 @@ nav:
           - 二维数组与字符串: array/2d-string.md
       - 第 4 章 · 函数与递归:
           - function/index.md
+          - 函数的定义与调用: function/function.md
+          - 递归入门: function/recursion.md
+          - 递推: function/recurrence.md
       - 第 5 章 · 基础算法:
           - algo/index.md
+          - 枚举：一个不漏地试: algo/enumerate.md
+          - 模拟：把题目翻译成代码: algo/simulate.md
+          - 贪心：每步都选当前最好: algo/greedy.md
+          - 二分查找与二分答案: algo/binary-search.md
       - 第 6 章 · 简单数据结构:
           - ds/index.md
       - 第 7 章 · 搜索入门:
