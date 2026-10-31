@@ -1,12 +1,14 @@
-site_name: 我的文档站
+site_name: Bobli 信奥课堂
 site_url: https://bobli1128.github.io/
-site_description: bobli1128 的个人静态文档网站
+site_description: 写给四年级到初三同学的 C++ 信息学奥赛教程，覆盖 CSP-J（入门级）与 CSP-S（提高级）
 repo_url: https://github.com/bobli1128/bobli1128.github.io
 edit_uri: edit/master/docs/
 
 theme:
   name: material
   language: zh
+  logo: assets/images/logo.svg
+  favicon: assets/images/logo.svg
   features:
     - navigation.sections
     - navigation.expand
@@ -68,7 +70,47 @@ extra:
 
 nav:
   - 首页: index.md
-  - 使用指南:
-      - guide/index.md
-      - 写作示例: guide/markdown-demo.md
-  - 关于: about.md
+  - 第一部分 · CSP-J 入门篇:
+      - 第 0 章 · 走进编程:
+          - start/index.md
+          - 认识信息学奥赛与 CSP: start/what-is-csp.md
+          - 搭建开发环境: start/environment.md
+          - 第一个 C++ 程序: start/hello-world.md
+      - 第 1 章 · C++ 语法基础:
+          - basics/index.md
+          - 变量与数据类型: basics/variable.md
+          - 输入与输出: basics/io.md
+          - 运算符与表达式: basics/operator.md
+      - 第 2 章 · 分支与循环:
+          - control/index.md
+      - 第 3 章 · 数组与字符串:
+          - array/index.md
+      - 第 4 章 · 函数与递归:
+          - function/index.md
+      - 第 5 章 · 基础算法:
+          - algo/index.md
+      - 第 6 章 · 简单数据结构:
+          - ds/index.md
+      - 第 7 章 · 搜索入门:
+          - search/index.md
+      - 第 8 章 · 动态规划入门:
+          - dp/index.md
+      - 第 9 章 · 竞赛数学基础:
+          - math/index.md
+  - 第二部分 · CSP-S 提高篇:
+      - 第 10 章 · 数据结构进阶:
+          - adv-ds/index.md
+      - 第 11 章 · 树与图论:
+          - graph/index.md
+      - 第 12 章 · 动态规划进阶:
+          - adv-dp/index.md
+      - 第 13 章 · 字符串算法:
+          - stralgo/index.md
+      - 第 14 章 · 搜索与优化进阶:
+          - adv-search/index.md
+      - 第 15 章 · 竞赛数学进阶:
+          - adv-math/index.md
+  - 备赛指南:
+      - contest/index.md
+  - 关于本站:
+      - about.md
