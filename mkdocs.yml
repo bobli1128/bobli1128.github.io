@@ -14,6 +14,7 @@ theme:
     - navigation.expand
     - navigation.top
     - navigation.indexes
+    - navigation.footer
     - search.suggest
     - search.highlight
     - content.code.copy
@@ -83,8 +84,13 @@ nav:
           - 运算符与表达式: basics/operator.md
       - 第 2 章 · 分支与循环:
           - control/index.md
+          - if 分支结构: control/if.md
+          - for 与 while 循环: control/loop.md
       - 第 3 章 · 数组与字符串:
           - array/index.md
+          - 一维数组与桶计数: array/1d-array.md
+          - 排序：冒泡与选择: array/sort.md
+          - 二维数组与字符串: array/2d-string.md
       - 第 4 章 · 函数与递归:
           - function/index.md
       - 第 5 章 · 基础算法:

@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 240" font-family="'Noto Sans SC', 'Microsoft YaHei', sans-serif">
+  <style>
+    text { font-size: 15px; fill: #1d1d20; }
+    .cell { fill: #fff; stroke: #55aea6; stroke-width: 1.5; }
+    .idx { fill: #999; font-size: 14px; }
+    .code { font-family: Consolas, monospace; fill: #3d8d86; font-weight: bold; }
+  </style>
+  <rect x="0" y="0" width="720" height="240" rx="10" fill="#f5f5f5"/>
+
+  <text class="code" x="50" y="60">int a[6];</text>
+  <text x="140" y="60" fill="#666" font-size="14">← 申请 6 个连续的「房间」</text>
+
+  <text x="150" y="105" fill="#666" font-size="14">元素值：</text>
+  <rect class="cell" x="150" y="115" width="80" height="56"/>
+  <rect class="cell" x="230" y="115" width="80" height="56"/>
+  <rect class="cell" x="310" y="115" width="80" height="56"/>
+  <rect class="cell" x="390" y="115" width="80" height="56"/>
+  <rect class="cell" x="470" y="115" width="80" height="56"/>
+  <rect class="cell" x="550" y="115" width="80" height="56"/>
+  <text x="190" y="150" text-anchor="middle" font-weight="bold">17</text>
+  <text x="270" y="150" text-anchor="middle" font-weight="bold">8</text>
+  <text x="350" y="150" text-anchor="middle" font-weight="bold">25</text>
+  <text x="430" y="150" text-anchor="middle" font-weight="bold">4</text>
+  <text x="510" y="150" text-anchor="middle" font-weight="bold">9</text>
+  <text x="590" y="150" text-anchor="middle" font-weight="bold">12</text>
+
+  <text x="150" y="200" class="idx" text-anchor="middle">0</text>
+  <text x="230" y="200" class="idx" text-anchor="middle">1</text>
+  <text x="310" y="200" class="idx" text-anchor="middle">2</text>
+  <text x="390" y="200" class="idx" text-anchor="middle">3</text>
+  <text x="470" y="200" class="idx" text-anchor="middle">4</text>
+  <text x="550" y="200" class="idx" text-anchor="middle">5</text>
+  <text x="630" y="200" fill="#666" font-size="14">← 下标从 0 开始！</text>
+
+  <text x="150" y="228" fill="#999" font-size="13">用法：a[0] 就是 17，a[2] = 30 可以直接改房间的值</text>
+</svg>

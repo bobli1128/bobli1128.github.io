@@ -670,8 +670,17 @@ a:hover .text-button span {
   transform: translate(-50%, -50%);
 }
 
-/* hide footer */
-/* mkdocs.yml 已设 extra.generator: false，页脚内部为空，这里把空壳横条一并隐藏 */
-.md-footer {
+/* footer prev/next navigation */
+/* mkdocs.yml 已设 extra.generator: false，版权条为空壳，隐藏它但保留上一节/下一节链接 */
+.md-footer-meta {
   display: none;
+}
+
+.md-footer {
+  background-color: var(--md-code-bg-color);
+  color: var(--md-default-fg-color);
+}
+
+.md-footer__link {
+  color: var(--md-default-fg-color);
 }

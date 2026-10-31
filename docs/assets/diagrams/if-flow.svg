@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" font-family="'Noto Sans SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#666"/>
+    </marker>
+  </defs>
+  <style>
+    .term { fill: #55aea6; }
+    .term text { fill: #fff; font-size: 16px; }
+    .proc { fill: #fff; stroke: #55aea6; stroke-width: 1.5; }
+    .proc text { fill: #1d1d20; font-size: 15px; }
+    .cond { fill: #e0f2f0; stroke: #3d8d86; stroke-width: 1.5; }
+    .cond text { fill: #1d1d20; font-size: 15px; font-weight: bold; }
+    .flow { stroke: #666; stroke-width: 1.5; fill: none; marker-end: url(#arr); }
+    .lbl { fill: #3d8d86; font-size: 14px; font-weight: bold; }
+  </style>
+  <rect x="0" y="0" width="720" height="340" rx="10" fill="#f5f5f5"/>
+
+  <rect class="term" x="300" y="15" width="120" height="40" rx="8"/>
+  <text x="360" y="40" text-anchor="middle" fill="#fff" font-size="16">开始</text>
+
+  <line class="flow" x1="360" y1="55" x2="360" y2="92"/>
+
+  <polygon class="cond" points="360,95 490,140 360,185 230,140"/>
+  <text x="360" y="146" text-anchor="middle">条件成立？</text>
+
+  <line class="flow" x1="490" y1="140" x2="518" y2="140"/>
+  <text class="lbl" x="498" y="128" text-anchor="middle">是</text>
+  <rect class="proc" x="520" y="118" width="170" height="44" rx="8"/>
+  <text x="605" y="145" text-anchor="middle">执行语句块 A</text>
+
+  <line class="flow" x1="230" y1="140" x2="202" y2="140"/>
+  <text class="lbl" x="222" y="128" text-anchor="middle">否</text>
+  <rect class="proc" x="30" y="118" width="170" height="44" rx="8"/>
+  <text x="115" y="145" text-anchor="middle">执行语句块 B</text>
+
+  <polyline class="flow" points="605,162 605,258 465,258"/>
+  <polyline class="flow" points="115,162 115,258 255,258"/>
+
+  <rect class="proc" x="260" y="236" width="200" height="44" rx="8"/>
+  <text x="360" y="263" text-anchor="middle">继续执行后面的代码</text>
+
+  <line class="flow" x1="360" y1="280" x2="360" y2="310"/>
+  <text x="360" y="330" text-anchor="middle" fill="#999" font-size="13">程序结束</text>
+</svg>

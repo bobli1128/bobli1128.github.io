@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 260" font-family="'Noto Sans SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#666"/>
+    </marker>
+  </defs>
+  <style>
+    text { font-size: 15px; fill: #1d1d20; }
+    .cell { fill: #fff; stroke: #55aea6; stroke-width: 1.5; }
+    .done { fill: #55aea6; }
+    .done text { fill: #fff; }
+    .minbox { stroke: #e67e22; stroke-width: 2.5; fill: none; }
+    .note { fill: #999; font-size: 13px; }
+    .step { fill: #3d8d86; font-weight: bold; font-size: 14px; }
+  </style>
+  <rect x="0" y="0" width="720" height="260" rx="10" fill="#f5f5f5"/>
+
+  <text x="360" y="38" text-anchor="middle" font-weight="bold">选择排序一趟：从「未排序区」挑出最小的，放到开头</text>
+
+  <text class="step" x="50" y="90">本趟开始</text>
+  <rect class="cell" x="170" y="62" width="64" height="46"/>
+  <rect class="cell" x="250" y="62" width="64" height="46"/>
+  <rect class="cell" x="330" y="62" width="64" height="46"/>
+  <rect class="cell" x="410" y="62" width="64" height="46"/>
+  <text x="202" y="92" text-anchor="middle">5</text>
+  <text x="282" y="92" text-anchor="middle">3</text>
+  <text x="362" y="92" text-anchor="middle">8</text>
+  <text x="442" y="92" text-anchor="middle">2</text>
+
+  <rect class="minbox" x="418" y="54" width="80" height="62" rx="6"/>
+  <text x="530" y="90" fill="#e67e22" font-weight="bold">扫描发现最小值 2</text>
+
+  <text class="step" x="50" y="195">交换后</text>
+  <rect class="done" x="170" y="167" width="64" height="46"/>
+  <rect class="cell" x="250" y="167" width="64" height="46"/>
+  <rect class="cell" x="330" y="167" width="64" height="46"/>
+  <rect class="cell" x="410" y="167" width="64" height="46"/>
+  <text x="202" y="197" text-anchor="middle">2</text>
+  <text x="282" y="197" text-anchor="middle">3</text>
+  <text x="362" y="197" text-anchor="middle">8</text>
+  <text x="442" y="197" text-anchor="middle">5</text>
+
+  <line x1="360" y1="118" x2="360" y2="155" stroke="#666" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text class="note" x="360" y="142" text-anchor="middle">把最小值 2 与第一个位置 5 交换</text>
+
+  <text class="note" x="360" y="242" text-anchor="middle">绿色 = 已就位。n 个数同样最多 n-1 趟，每趟扫描一遍未排序区。</text>
+</svg>

@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" font-family="'Noto Sans SC', 'Microsoft YaHei', sans-serif">
+  <style>
+    text { font-size: 15px; fill: #1d1d20; }
+    .cell { fill: #fff; stroke: #55aea6; stroke-width: 1.5; }
+    .idx { fill: #999; font-size: 14px; }
+    .hl { fill: #e0f2f0; }
+    .code { font-family: Consolas, monospace; fill: #3d8d86; font-weight: bold; }
+  </style>
+  <rect x="0" y="0" width="720" height="300" rx="10" fill="#f5f5f5"/>
+
+  <text class="code" x="60" y="52">int a[3][4];</text>
+  <text x="200" y="52" fill="#666" font-size="14">← 3 行 × 4 列，像一张表格</text>
+
+  <text x="100" y="90" class="idx" text-anchor="middle">列0</text>
+  <text x="175" y="90" class="idx" text-anchor="middle">列1</text>
+  <text x="250" y="90" class="idx" text-anchor="middle">列2</text>
+  <text x="325" y="90" class="idx" text-anchor="middle">列3</text>
+
+  <text x="45" y="133" class="idx" text-anchor="middle">行0</text>
+  <text x="45" y="184" class="idx" text-anchor="middle">行1</text>
+  <text x="45" y="235" class="idx" text-anchor="middle">行2</text>
+
+  <rect class="cell" x="62"  y="100" width="76" height="50"/>
+  <rect class="cell" x="137" y="100" width="76" height="50"/>
+  <rect class="cell" x="212" y="100" width="76" height="50"/>
+  <rect class="cell" x="287" y="100" width="76" height="50"/>
+  <rect class="cell" x="62"  y="151" width="76" height="50"/>
+  <rect class="cell" x="137" y="151" width="76" height="50"/>
+  <rect class="hl"   x="212" y="151" width="76" height="50" stroke="#3d8d86" stroke-width="1.5"/>
+  <rect class="cell" x="287" y="151" width="76" height="50"/>
+  <rect class="cell" x="62"  y="202" width="76" height="50"/>
+  <rect class="cell" x="137" y="202" width="76" height="50"/>
+  <rect class="cell" x="212" y="202" width="76" height="50"/>
+  <rect class="cell" x="287" y="202" width="76" height="50"/>
+
+  <text x="100" y="131" text-anchor="middle" font-weight="bold">1</text>
+  <text x="175" y="131" text-anchor="middle" font-weight="bold">2</text>
+  <text x="250" y="131" text-anchor="middle" font-weight="bold">3</text>
+  <text x="325" y="131" text-anchor="middle" font-weight="bold">4</text>
+  <text x="100" y="182" text-anchor="middle" font-weight="bold">5</text>
+  <text x="175" y="182" text-anchor="middle" font-weight="bold">6</text>
+  <text x="250" y="182" text-anchor="middle" font-weight="bold">7</text>
+  <text x="325" y="182" text-anchor="middle" font-weight="bold">8</text>
+  <text x="100" y="233" text-anchor="middle" font-weight="bold">9</text>
+  <text x="175" y="233" text-anchor="middle" font-weight="bold">10</text>
+  <text x="250" y="233" text-anchor="middle" font-weight="bold">11</text>
+  <text x="325" y="233" text-anchor="middle" font-weight="bold">12</text>
+
+  <text x="420" y="182" fill="#3d8d86" font-size="14">高亮格子：第 1 行第 2 列</text>
+  <text class="code" x="420" y="208" font-size="16">a[1][2] == 7</text>
+  <text x="420" y="234" fill="#999" font-size="13">先行后列，行在前</text>
+</svg>

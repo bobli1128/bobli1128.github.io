@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" font-family="'Noto Sans SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#666"/>
+    </marker>
+  </defs>
+  <style>
+    .term { fill: #55aea6; }
+    .proc { fill: #fff; stroke: #55aea6; stroke-width: 1.5; }
+    .cond { fill: #e0f2f0; stroke: #3d8d86; stroke-width: 1.5; }
+    .flow { stroke: #666; stroke-width: 1.5; fill: none; marker-end: url(#arr); }
+    .lbl { fill: #3d8d86; font-size: 14px; font-weight: bold; }
+    .note { fill: #999; font-size: 13px; }
+    text { font-size: 15px; fill: #1d1d20; }
+    .term text { fill: #fff; }
+  </style>
+  <rect x="0" y="0" width="720" height="400" rx="10" fill="#f5f5f5"/>
+
+  <rect class="term" x="300" y="15" width="120" height="40" rx="8"/>
+  <text x="360" y="40" text-anchor="middle" fill="#fff">开始</text>
+
+  <line class="flow" x1="360" y1="55" x2="360" y2="82"/>
+
+  <rect class="proc" x="280" y="85" width="160" height="40" rx="8"/>
+  <text x="360" y="110" text-anchor="middle">i = 1（初始化）</text>
+
+  <line class="flow" x1="360" y1="125" x2="360" y2="152"/>
+
+  <polygon class="cond" points="360,155 500,205 360,255 220,205"/>
+  <text x="360" y="211" text-anchor="middle">i &lt;= n ？</text>
+
+  <line class="flow" x1="500" y1="205" x2="538" y2="205"/>
+  <text class="lbl" x="516" y="193" text-anchor="middle">是</text>
+  <rect class="proc" x="540" y="95" width="150" height="44" rx="8"/>
+  <text x="615" y="122" text-anchor="middle">执行循环体</text>
+  <line class="flow" x1="615" y1="139" x2="615" y2="187"/>
+  <rect class="proc" x="540" y="190" width="150" height="40" rx="8"/>
+  <text x="615" y="215" text-anchor="middle">i++（更新）</text>
+
+  <polyline class="flow" points="615,230 615,378 190,378 190,205 216,205"/>
+  <text class="note" x="402" y="370" text-anchor="middle">回到判断，i 变了，结果可能不同</text>
+
+  <line class="flow" x1="360" y1="255" x2="360" y2="292"/>
+  <text class="lbl" x="376" y="278">否</text>
+  <rect class="term" x="300" y="295" width="120" height="40" rx="8"/>
+  <text x="360" y="320" text-anchor="middle" fill="#fff">结束</text>
+</svg>
