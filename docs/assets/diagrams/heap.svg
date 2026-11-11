@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" font-family="'Noto Sans SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#999"/>
+    </marker>
+  </defs>
+  <style>
+    text { font-size: 14px; fill: #1d1d20; }
+    .node { fill: #fff; stroke: #55aea6; stroke-width: 1.8; }
+    .node text { text-anchor: middle; font-family: Consolas, monospace; font-size: 16px; }
+    .idx { fill: #999; font-size: 12.5px; }
+    .line { stroke: #999; stroke-width: 1.4; }
+    .cell { fill: #fff; stroke: #55aea6; stroke-width: 1.5; }
+    .cell text { text-anchor: middle; font-family: Consolas, monospace; font-size: 14px; }
+    .note { fill: #999; font-size: 13px; }
+    .lbl { fill: #3d8d86; font-size: 13.5px; font-weight: bold; }
+  </style>
+  <rect x="0" y="0" width="720" height="300" rx="10" fill="#f5f5f5"/>
+
+  <text x="250" y="34" text-anchor="middle" font-weight="bold">小根堆：父 ≤ 子（最小值永远在堆顶）</text>
+
+  <line class="line" x1="250" y1="90" x2="165" y2="130"/>
+  <line class="line" x1="250" y1="90" x2="335" y2="130"/>
+  <line class="line" x1="165" y1="160" x2="120" y2="200"/>
+  <line class="line" x1="165" y1="160" x2="210" y2="200"/>
+
+  <rect class="node" x="215" y="58" width="70" height="36" rx="6"/>
+  <text x="250" y="82">1</text>
+  <text class="idx" x="250" y="52" text-anchor="middle">[1]</text>
+
+  <rect class="node" x="130" y="130" width="70" height="36" rx="6"/>
+  <text x="165" y="154">4</text>
+  <text class="idx" x="150" y="128" text-anchor="middle">[2]</text>
+  <rect class="node" x="300" y="130" width="70" height="36" rx="6"/>
+  <text x="335" y="154">3</text>
+  <text class="idx" x="350" y="128" text-anchor="middle">[3]</text>
+
+  <rect class="node" x="85" y="200" width="70" height="36" rx="6"/>
+  <text x="120" y="224">7</text>
+  <text class="idx" x="100" y="196" text-anchor="middle">[4]</text>
+  <rect class="node" x="175" y="200" width="70" height="36" rx="6"/>
+  <text x="210" y="224">6</text>
+  <text class="idx" x="190" y="196" text-anchor="middle">[5]</text>
+
+  <text class="note" x="250" y="266" text-anchor="middle">任意父节点 ≤ 它的孩子，但左右孩子谁大不管</text>
+
+  <text class="lbl" x="560" y="60" text-anchor="middle">存进数组，正好按层铺平</text>
+  <g>
+    <rect class="cell" x="440" y="70" width="40" height="40"/>
+    <text x="460" y="96"></text>
+    <rect class="cell" x="480" y="70" width="40" height="40"/>
+    <text x="500" y="96">1</text>
+    <rect class="cell" x="520" y="70" width="40" height="40"/>
+    <text x="540" y="96">4</text>
+    <rect class="cell" x="560" y="70" width="40" height="40"/>
+    <text x="580" y="96">3</text>
+    <rect class="cell" x="600" y="70" width="40" height="40"/>
+    <text x="620" y="96">7</text>
+    <rect class="cell" x="640" y="70" width="40" height="40"/>
+    <text x="660" y="96">6</text>
+    <text class="idx" x="460" y="126" text-anchor="middle">0</text>
+    <text class="idx" x="500" y="126" text-anchor="middle">1</text>
+    <text class="idx" x="540" y="126" text-anchor="middle">2</text>
+    <text class="idx" x="580" y="126" text-anchor="middle">3</text>
+    <text class="idx" x="620" y="126" text-anchor="middle">4</text>
+    <text class="idx" x="660" y="126" text-anchor="middle">5</text>
+  </g>
+
+  <text class="lbl" x="560" y="170" text-anchor="middle">下标公式（从 1 存更省心）</text>
+  <text class="note" x="560" y="198" text-anchor="middle">节点 i 的左孩子 = 2i，右孩子 = 2i+1，父 = i/2</text>
+  <text class="note" x="560" y="226" text-anchor="middle">上浮：新元素比父小就和父交换，直到到位</text>
+  <text class="note" x="560" y="254" text-anchor="middle">下沉：弹出堆顶后，末尾元素补位，逐层与更小的孩子交换</text>
+</svg>

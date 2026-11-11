@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" font-family="'Noto Sans SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#999"/>
+    </marker>
+    <marker id="arrO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#e67e22"/>
+    </marker>
+  </defs>
+  <style>
+    text { font-size: 14px; fill: #1d1d20; }
+    .node { fill: #fff; stroke: #55aea6; stroke-width: 1.8; }
+    .node text { text-anchor: middle; font-family: Consolas, monospace; font-size: 15px; }
+    .root { fill: #55aea6; }
+    .root text { fill: #fff; }
+    .line { stroke: #999; stroke-width: 1.4; }
+    .lineO { stroke: #e67e22; stroke-width: 1.8; fill: none; marker-end: url(#arrO); }
+    .idx { fill: #999; font-size: 12.5px; }
+    .note { fill: #999; font-size: 13px; }
+    .lbl { fill: #3d8d86; font-size: 14px; font-weight: bold; }
+    .lblO { fill: #e67e22; font-size: 13.5px; font-weight: bold; }
+  </style>
+  <rect x="0" y="0" width="720" height="320" rx="10" fill="#f5f5f5"/>
+
+  <text class="lbl" x="180" y="40" text-anchor="middle">合并前：两个朋友圈</text>
+  <rect class="root" x="145" y="55" width="70" height="36" rx="6"/>
+  <text x="180" y="79">1</text>
+  <rect class="node" x="60"  y="125" width="70" height="36" rx="6"/>
+  <text x="95"  y="149">2</text>
+  <rect class="node" x="145" y="125" width="70" height="36" rx="6"/>
+  <text x="180" y="149">3</text>
+  <rect class="node" x="230" y="125" width="70" height="36" rx="6"/>
+  <text x="265" y="149">4</text>
+  <line class="line" x1="95"  y1="125" x2="170" y2="93"/>
+  <line class="line" x1="180" y1="125" x2="180" y2="93"/>
+  <line class="line" x1="265" y1="125" x2="190" y2="93"/>
+  <text class="idx" x="180" y="196" text-anchor="middle">fa[2]=1, fa[3]=1, fa[4]=1（fa[1]=1 自己）</text>
+
+  <text class="lbl" x="540" y="40" text-anchor="middle">5 号人和 1 号人是朋友 → 合并</text>
+  <rect class="root" x="505" y="55" width="70" height="36" rx="6"/>
+  <text x="540" y="79">1</text>
+  <rect class="node" x="420" y="125" width="70" height="36" rx="6"/>
+  <text x="455" y="149">2</text>
+  <rect class="node" x="505" y="125" width="70" height="36" rx="6"/>
+  <text x="540" y="149">3</text>
+  <rect class="node" x="590" y="125" width="70" height="36" rx="6"/>
+  <text x="625" y="149">4</text>
+  <rect class="node" x="420" y="195" width="70" height="36" rx="6"/>
+  <text x="455" y="219">5</text>
+  <line class="line" x1="455"  y1="125" x2="530" y2="93"/>
+  <line class="line" x1="540" y1="125" x2="540" y2="93"/>
+  <line class="line" x1="625" y1="125" x2="550" y2="93"/>
+  <path class="lineO" d="M 455 195 C 445 165 455 120 498 92"/>
+  <text class="lblO" x="470" y="250" text-anchor="middle">只改一个指针：fa[find(5)] = find(1)</text>
+
+  <text class="note" x="360" y="292" text-anchor="middle">判朋友：两号节点根相同 → 同一个圈。路径压缩：查询时把沿途节点直接挂到根上，越查越快。</text>
+</svg>

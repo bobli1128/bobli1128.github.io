@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" font-family="'Noto Sans SC', 'Microsoft YaHei', sans-serif">
+  <style>
+    text { font-size: 14px; fill: #1d1d20; }
+    .node { fill: #fff; stroke: #55aea6; stroke-width: 1.8; }
+    .node text { text-anchor: middle; font-family: Consolas, monospace; font-size: 15px; }
+    .end { fill: #e0f2f0; stroke: #3d8d86; stroke-width: 1.8; }
+    .end text { text-anchor: middle; font-size: 12px; font-weight: bold; }
+    .line { stroke: #999; stroke-width: 1.4; }
+    .letter { fill: #3d8d86; font-size: 13px; font-weight: bold; }
+    .note { fill: #999; font-size: 13px; }
+  </style>
+  <rect x="0" y="0" width="720" height="340" rx="10" fill="#f5f5f5"/>
+
+  <text x="360" y="34" text-anchor="middle" font-weight="bold">存入 he、her、hi 三个单词后的 Trie</text>
+
+  <rect class="node" x="330" y="52" width="60" height="34" rx="6"/>
+  <text x="360" y="74">根</text>
+
+  <line class="line" x1="345" y1="86" x2="215" y2="128"/>
+  <line class="line" x1="375" y1="86" x2="505" y2="128"/>
+  <text class="letter" x="262" y="102">h</text>
+  <text class="letter" x="458" y="102">i</text>
+
+  <rect class="node" x="185" y="130" width="60" height="34" rx="6"/>
+  <text x="215" y="152">h</text>
+  <rect class="end" x="475" y="130" width="60" height="34" rx="6"/>
+  <text x="505" y="152">i ⭐</text>
+
+  <line class="line" x1="200" y1="164" x2="135" y2="206"/>
+  <line class="line" x1="230" y1="164" x2="295" y2="206"/>
+  <text class="letter" x="152" y="190">e</text>
+  <text class="letter" x="278" y="190">e</text>
+
+  <rect class="end" x="105" y="208" width="60" height="34" rx="6"/>
+  <text x="135" y="230">e ⭐</text>
+  <rect class="node" x="265" y="208" width="60" height="34" rx="6"/>
+  <text x="295" y="230">r</text>
+
+  <line class="line" x1="295" y1="242" x2="295" y2="272"/>
+  <rect class="end" x="265" y="274" width="60" height="34" rx="6"/>
+  <text x="295" y="296">⭐</text>
+
+  <text class="note" x="360" y="326" text-anchor="middle">⭐ = 单词结束标记。查「he 是不是词」沿 h→e 走到 ⭐ → 是；查「her 是不是词」走 h→e→r→⭐ → 是；「hez」走到死路 → 不是</text>
+</svg>

@@ -124,6 +124,10 @@ nav:
   - 第二部分 · CSP-S 提高篇:
       - 第 10 章 · 数据结构进阶:
           - adv-ds/index.md
+          - 堆与优先队列: adv-ds/heap.md
+          - 并查集: adv-ds/dsu.md
+          - 哈希表与字典树: adv-ds/hash-trie.md
+          - 树状数组与线段树: adv-ds/fenwick-segment.md
       - 第 11 章 · 树与图论:
           - graph/index.md
       - 第 12 章 · 动态规划进阶:

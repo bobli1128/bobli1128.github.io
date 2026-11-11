@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 330" font-family="'Noto Sans SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#666"/>
+    </marker>
+  </defs>
+  <style>
+    text { font-size: 14px; fill: #1d1d20; }
+    .num { fill: #fff; stroke: #55aea6; stroke-width: 1.5; }
+    .num text { text-anchor: middle; font-family: Consolas, monospace; font-size: 15px; }
+    .idx { fill: #999; font-size: 13px; }
+    .tree { fill: #ffe9c9; stroke: #e67e22; stroke-width: 1.8; }
+    .bracket { stroke: #e67e22; stroke-width: 1.6; fill: none; }
+    .lblO { fill: #e67e22; font-size: 13px; font-weight: bold; }
+    .note { fill: #999; font-size: 13px; }
+    .lbl { fill: #3d8d86; font-size: 13.5px; font-weight: bold; }
+  </style>
+  <rect x="0" y="0" width="720" height="330" rx="10" fill="#f5f5f5"/>
+
+  <text x="360" y="34" text-anchor="middle" font-weight="bold">原数组 a[1..8] 与树状数组 tree[] 各自管辖的区间</text>
+
+  <g>
+    <rect class="num" x="60" y="60" width="70" height="44"/>
+    <text x="95"  y="88">a1</text>
+    <rect class="num" x="130" y="60" width="70" height="44"/>
+    <text x="165" y="88">a2</text>
+    <rect class="num" x="200" y="60" width="70" height="44"/>
+    <text x="235" y="88">a3</text>
+    <rect class="num" x="270" y="60" width="70" height="44"/>
+    <text x="305" y="88">a4</text>
+    <rect class="num" x="340" y="60" width="70" height="44"/>
+    <text x="375" y="88">a5</text>
+    <rect class="num" x="410" y="60" width="70" height="44"/>
+    <text x="445" y="88">a6</text>
+    <rect class="num" x="480" y="60" width="70" height="44"/>
+    <text x="515" y="88">a7</text>
+    <rect class="num" x="550" y="60" width="70" height="44"/>
+    <text x="585" y="88">a8</text>
+    <text class="idx" x="95"  y="122" text-anchor="middle">1</text>
+    <text class="idx" x="165" y="122" text-anchor="middle">2</text>
+    <text class="idx" x="235" y="122" text-anchor="middle">3</text>
+    <text class="idx" x="305" y="122" text-anchor="middle">4</text>
+    <text class="idx" x="375" y="122" text-anchor="middle">5</text>
+    <text class="idx" x="445" y="122" text-anchor="middle">6</text>
+    <text class="idx" x="515" y="122" text-anchor="middle">7</text>
+    <text class="idx" x="585" y="122" text-anchor="middle">8</text>
+  </g>
+
+  <text class="lbl" x="360" y="160" text-anchor="middle">tree[i] 管辖「以 i 结尾、长度为 lowbit(i)」的一段和：</text>
+
+  <g>
+    <rect class="num" x="60"  y="175" width="70" height="40"/>
+    <text x="95"  y="201">a1</text>
+    <rect class="num" x="130" y="175" width="140" height="40"/>
+    <text x="200" y="201">a1+a2</text>
+    <rect class="num" x="270" y="175" width="70" height="40"/>
+    <text x="305" y="201">a3</text>
+    <rect class="num" x="340" y="175" width="280" height="40"/>
+    <text x="480" y="201">a1+a2+a3+a4</text>
+    <rect class="num" x="620" y="175" width="70" height="40"/>
+    <text x="655" y="201">a5</text>
+    <text class="idx" x="95"  y="231" text-anchor="middle">tree1</text>
+    <text class="idx" x="200" y="231" text-anchor="middle">tree2</text>
+    <text class="idx" x="305" y="231" text-anchor="middle">tree3</text>
+    <text class="idx" x="480" y="231" text-anchor="middle">tree4</text>
+    <text class="idx" x="655" y="231" text-anchor="middle">tree5</text>
+  </g>
+
+  <text class="note" x="360" y="268" text-anchor="middle">lowbit(i) = i &amp; (-i)：取出 i 二进制最低位的 1 所代表的值（1→1, 2→2, 3→1, 4→4, 5→1, 6→2, 7→1, 8→8）</text>
+  <text class="note" x="360" y="296" text-anchor="middle">查询前缀和：从 i 不断减 lowbit 跳着累加（如前 7 项和 = tree7 + tree6 + tree4，只看 3 个格子）</text>
+  <text class="note" x="360" y="322" text-anchor="middle">单点修改：从 i 不断加 lowbit 向上更新所有管到它的 tree（单点改 + 区间问，都是 O(log n)）</text>
+</svg>
