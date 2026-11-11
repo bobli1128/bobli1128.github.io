@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 330" font-family="'Noto Sans SC', 'Microsoft YaHei', sans-serif">
+  <style>
+    text { font-size: 14px; fill: #1d1d20; }
+    .node { fill: #fff; stroke: #55aea6; stroke-width: 2; }
+    .node text { text-anchor: middle; font-family: Consolas, monospace; font-size: 16px; }
+    .edge { stroke: #999; stroke-width: 1.6; }
+    .w { fill: #3d8d86; font-size: 13px; font-weight: bold; }
+    .row { font-family: Consolas, monospace; font-size: 13.5px; fill: #1d1d20; }
+    .head { fill: #3d8d86; font-weight: bold; font-size: 14px; }
+    .note { fill: #999; font-size: 13px; }
+  </style>
+  <rect x="0" y="0" width="720" height="330" rx="10" fill="#f5f5f5"/>
+
+  <text x="190" y="34" text-anchor="middle" font-weight="bold">图 G（4 个点 5 条边）</text>
+
+  <circle class="node" cx="90"  cy="100" r="26"/>
+  <text x="90"  y="106">1</text>
+  <circle class="node" cx="290" cy="100" r="26"/>
+  <text x="290" y="106">2</text>
+  <circle class="node" cx="120" cy="230" r="26"/>
+  <text x="120" y="236">3</text>
+  <circle class="node" cx="280" cy="230" r="26"/>
+  <text x="280" y="236">4</text>
+
+  <line class="edge" x1="116" y1="100" x2="264" y2="100"/>
+  <text class="w" x="190" y="92" text-anchor="middle">2</text>
+  <line class="edge" x1="104" y1="124" x2="112" y2="204"/>
+  <text class="w" x="90"  y="170" text-anchor="middle">4</text>
+  <line class="edge" x1="136" y1="230" x2="254" y2="230"/>
+  <text class="w" x="195" y="222" text-anchor="middle">1</text>
+  <line class="edge" x1="136" y1="216" x2="270" y2="118"/>
+  <text class="w" x="220" y="160" text-anchor="middle">5</text>
+  <line class="edge" x1="280" y1="126" x2="280" y2="204"/>
+  <text class="w" x="295" y="170" text-anchor="middle">3</text>
+
+  <text class="head" x="560" y="34" text-anchor="middle">邻接表：每个点挂一条「出边链」</text>
+  <text class="row" x="470" y="70">adj[1]  → (2, w=2) → (3, w=4)</text>
+  <text class="row" x="470" y="106">adj[2]  → (1, w=2) → (3, w=5) → (4, w=3)</text>
+  <text class="row" x="470" y="142">adj[3]  → (1, w=4) → (2, w=5) → (4, w=1)</text>
+  <text class="row" x="470" y="178">adj[4]  → (2, w=3) → (3, w=1)</text>
+  <text class="note" x="560" y="215" text-anchor="middle">（无向图：每条边存两遍，正反各一次）</text>
+
+  <text class="head" x="560" y="258" text-anchor="middle">C++ 写法：vector 大法</text>
+  <text class="row" x="452" y="288">vector&lt;PII&gt; adj[N];</text>
+  <text class="row" x="452" y="312">adj[u].push_back({v, w});   // 存双向就再来一行</text>
+</svg>

@@ -11,7 +11,6 @@ theme:
   favicon: assets/images/logo.svg
   features:
     - navigation.sections
-    - navigation.expand
     - navigation.top
     - navigation.indexes
     - navigation.footer
@@ -130,6 +129,10 @@ nav:
           - 树状数组与线段树: adv-ds/fenwick-segment.md
       - 第 11 章 · 树与图论:
           - graph/index.md
+          - 图的存储与遍历: graph/graph-basics.md
+          - 最短路: graph/shortest-path.md
+          - 最小生成树: graph/mst.md
+          - 拓扑排序: graph/topo.md
       - 第 12 章 · 动态规划进阶:
           - adv-dp/index.md
       - 第 13 章 · 字符串算法:

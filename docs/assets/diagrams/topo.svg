@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" font-family="'Noto Sans SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#999"/>
+    </marker>
+  </defs>
+  <style>
+    text { font-size: 14px; fill: #1d1d20; }
+    .node { fill: #fff; stroke: #55aea6; stroke-width: 2; }
+    .node text { text-anchor: middle; font-family: Consolas, monospace; font-size: 15px; }
+    .zero { fill: #55aea6; }
+    .zero text { fill: #fff; }
+    .done { fill: #e0f2f0; }
+    .edge { stroke: #999; stroke-width: 1.6; marker-end: url(#arr); }
+    .note { fill: #999; font-size: 13px; }
+    .lbl { fill: #3d8d86; font-size: 13.5px; font-weight: bold; }
+  </style>
+  <rect x="0" y="0" width="720" height="320" rx="10" fill="#f5f5f5"/>
+
+  <text x="360" y="34" text-anchor="middle" font-weight="bold">拓扑排序：入度清零的先干活（如做菜流程）</text>
+
+  <circle class="node zero" cx="120" cy="110" r="26"/>
+  <text x="120" y="116">备菜</text>
+  <circle class="node" cx="330" cy="70" r="26"/>
+  <text x="330" y="76">煮饭</text>
+  <circle class="node" cx="330" cy="170" r="26"/>
+  <text x="330" y="176">炒菜</text>
+  <circle class="node done" cx="560" cy="120" r="26"/>
+  <text x="560" y="126">装盘</text>
+
+  <line class="edge" x1="146" y1="100" x2="303" y2="76"/>
+  <line class="edge" x1="146" y1="122" x2="303" y2="164"/>
+  <line class="edge" x1="356" y1="80" x2="535" y2="112"/>
+  <line class="edge" x1="356" y1="162" x2="535" y2="130"/>
+
+  <text class="lbl" x="120" y="170" text-anchor="middle">入度 0 → 先出队</text>
+  <text class="note" x="330" y="34" text-anchor="middle">入度 1（等备菜）</text>
+  <text class="note" x="560" y="164" text-anchor="middle">两个前驱都完成后入度清零</text>
+
+  <text class="note" x="360" y="256" text-anchor="middle">流程：所有入度为 0 的点入队 → 队首出队、删掉它的出边（邻居入度 -1）→ 邻居入度变 0 就入队</text>
+  <text class="note" x="360" y="284" text-anchor="middle">排序合法 ⇏ 唯一；若中途队列为空但还有点没输出 → 图中有环（拓扑排序还能判环！）</text>
+  <text class="note" x="360" y="308" text-anchor="middle">典型应用：任务依赖、课程先修、DP 的计算顺序（第 12 章树形/区间 DP 都靠「按拓扑序转移」）</text>
+</svg>
