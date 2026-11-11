@@ -114,8 +114,13 @@ nav:
           - 剪枝：让搜索跑得更快: search/prune.md
       - 第 8 章 · 动态规划入门:
           - dp/index.md
+          - 一维动态规划: dp/dp1d.md
+          - 背包问题: dp/knapsack.md
       - 第 9 章 · 竞赛数学基础:
           - math/index.md
+          - 进制与位运算: math/base-bits.md
+          - 质数与公约数: math/primes-gcd.md
+          - 简单计数与排列组合: math/counting.md
   - 第二部分 · CSP-S 提高篇:
       - 第 10 章 · 数据结构进阶:
           - adv-ds/index.md

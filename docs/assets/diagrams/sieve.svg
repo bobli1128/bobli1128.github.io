@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" font-family="'Noto Sans SC', 'Microsoft YaHei', sans-serif">
+  <style>
+    text { font-size: 14px; fill: #1d1d20; }
+    .num { fill: #fff; stroke: #55aea6; stroke-width: 1.5; }
+    .num text { text-anchor: middle; font-family: Consolas, monospace; font-size: 15px; }
+    .prime { fill: #55aea6; }
+    .prime text { fill: #fff; }
+    .cut { opacity: 0.28; }
+    .cutline { stroke: #e67e22; stroke-width: 2; }
+    .note { fill: #999; font-size: 13px; }
+    .lbl { fill: #e67e22; font-size: 13.5px; font-weight: bold; }
+  </style>
+  <rect x="0" y="0" width="720" height="300" rx="10" fill="#f5f5f5"/>
+
+  <text x="360" y="34" text-anchor="middle" font-weight="bold">埃氏筛：用质数划掉它们的倍数，剩下的全是质数</text>
+
+  <g>
+    <rect class="num prime" x="55"  y="60" width="56" height="44"/>
+    <text x="83"  y="88">2</text>
+    <rect class="num prime" x="115" y="60" width="56" height="44"/>
+    <text x="143" y="88">3</text>
+    <g class="cut">
+      <rect class="num" x="175" y="60" width="56" height="44"/>
+      <text x="203" y="88">4</text>
+    </g>
+    <rect class="num prime" x="235" y="60" width="56" height="44"/>
+    <text x="263" y="88">5</text>
+    <g class="cut">
+      <rect class="num" x="295" y="60" width="56" height="44"/>
+      <text x="323" y="88">6</text>
+    </g>
+    <rect class="num prime" x="355" y="60" width="56" height="44"/>
+    <text x="383" y="88">7</text>
+    <g class="cut">
+      <rect class="num" x="415" y="60" width="56" height="44"/>
+      <text x="443" y="88">8</text>
+    </g>
+    <g class="cut">
+      <rect class="num" x="475" y="60" width="56" height="44"/>
+      <text x="503" y="88">9</text>
+    </g>
+    <g class="cut">
+      <rect class="num" x="535" y="60" width="56" height="44"/>
+      <text x="563" y="88">10</text>
+    </g>
+    <rect class="num prime" x="595" y="60" width="56" height="44"/>
+    <text x="623" y="88">11</text>
+  </g>
+
+  <g>
+    <g class="cut">
+      <rect class="num" x="55" y="120" width="56" height="44"/>
+      <text x="83" y="148">12</text>
+    </g>
+    <rect class="num prime" x="115" y="120" width="56" height="44"/>
+    <text x="143" y="148">13</text>
+    <g class="cut">
+      <rect class="num" x="175" y="120" width="56" height="44"/>
+      <text x="203" y="148">14</text>
+    </g>
+    <g class="cut">
+      <rect class="num" x="235" y="120" width="56" height="44"/>
+      <text x="263" y="148">15</text>
+    </g>
+    <g class="cut">
+      <rect class="num" x="295" y="120" width="56" height="44"/>
+      <text x="323" y="148">16</text>
+    </g>
+    <rect class="num prime" x="355" y="120" width="56" height="44"/>
+    <text x="383" y="148">17</text>
+    <g class="cut">
+      <rect class="num" x="415" y="120" width="56" height="44"/>
+      <text x="443" y="148">18</text>
+    </g>
+    <rect class="num prime" x="475" y="120" width="56" height="44"/>
+    <text x="503" y="148">19</text>
+    <g class="cut">
+      <rect class="num" x="535" y="120" width="56" height="44"/>
+      <text x="563" y="148">20</text>
+    </g>
+    <g class="cut">
+      <rect class="num" x="595" y="120" width="56" height="44"/>
+      <text x="623" y="148">21</text>
+    </g>
+  </g>
+
+  <line class="cutline" x1="203" y1="56" x2="203" y2="108"/>
+  <line class="cutline" x1="323" y1="56" x2="323" y2="108"/>
+  <text class="lbl" x="203" y="48" text-anchor="middle">被 2 划掉</text>
+
+  <text class="note" x="360" y="205" text-anchor="middle">流程：从 2 开始，遇到没被划掉的数 → 它是质数 → 把它的 2 倍、3 倍……全部划掉；划到 √n 即可</text>
+  <text class="note" x="360" y="233" text-anchor="middle">复杂度约 O(n log log n)：筛 1~10⁶ 几乎瞬间完成；逐个试除判断则要 10⁶ × √10⁶ ≈ 10⁹ 次</text>
+  <text class="note" x="360" y="261" text-anchor="middle">要问「1~n 里有多少质数」→ 想都不用想，上筛法。</text>
+</svg>
