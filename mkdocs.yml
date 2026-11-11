@@ -135,6 +135,10 @@ nav:
           - 拓扑排序: graph/topo.md
       - 第 12 章 · 动态规划进阶:
           - adv-dp/index.md
+          - LIS 与 LCS: adv-dp/lis-lcs.md
+          - 区间 DP: adv-dp/interval-dp.md
+          - 树形 DP: adv-dp/tree-dp.md
+          - 状压 DP: adv-dp/bitmask-dp.md
       - 第 13 章 · 字符串算法:
           - stralgo/index.md
       - 第 14 章 · 搜索与优化进阶:

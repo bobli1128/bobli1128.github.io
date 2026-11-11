@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 330" font-family="'Noto Sans SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#666"/>
+    </marker>
+  </defs>
+  <style>
+    text { font-size: 14px; fill: #1d1d20; }
+    .node { fill: #fff; stroke: #55aea6; stroke-width: 1.8; }
+    .node text { text-anchor: middle; font-family: Consolas, monospace; font-size: 14px; }
+    .badge { fill: #e0f2f0; stroke: #3d8d86; stroke-width: 1.2; }
+    .badge text { text-anchor: middle; font-family: Consolas, monospace; font-size: 12px; }
+    .line { stroke: #999; stroke-width: 1.4; }
+    .flow { stroke: #666; stroke-width: 1.6; fill: none; marker-end: url(#arr); }
+    .note { fill: #999; font-size: 13px; }
+    .lbl { fill: #3d8d86; font-size: 13.5px; font-weight: bold; }
+    .rave { fill: #e67e22; font-size: 13px; font-weight: bold; }
+  </style>
+  <rect x="0" y="0" width="720" height="330" rx="10" fill="#f5f5f5"/>
+
+  <text x="360" y="32" text-anchor="middle" font-weight="bold">树形 DP：每个节点两个状态，自底向上合并</text>
+
+  <rect class="node" x="160" y="60" width="90" height="40" rx="6"/>
+  <text x="205" y="86">职员1 (r=2)</text>
+  <rect class="badge" x="255" y="58" width="86" height="20" rx="4"/>
+  <text x="298" y="73">不选:9 选:6</text>
+
+  <line class="line" x1="150" y1="100" x2="95" y2="140"/>
+  <line class="line" x1="195" y1="100" x2="250" y2="140"/>
+
+  <rect class="node" x="50" y="142" width="90" height="40" rx="6"/>
+  <text x="95" y="168">职员2 (r=5)</text>
+  <rect class="badge" x="48" y="190" width="86" height="20" rx="4"/>
+  <text x="91" y="205">不选:4 选:5</text>
+  <rect class="node" x="205" y="142" width="90" height="40" rx="6"/>
+  <text x="250" y="168">职员3 (r=4)</text>
+  <rect class="badge" x="203" y="190" width="86" height="20" rx="4"/>
+  <text x="246" y="205">不选:0 选:4</text>
+
+  <line class="line" x1="85" y1="182" x2="45" y2="222"/>
+  <line class="line" x1="105" y1="182" x2="140" y2="222"/>
+  <rect class="node" x="10" y="224" width="70" height="36" rx="6"/>
+  <text x="45" y="248">职员4 (1)</text>
+  <rect class="node" x="140" y="224" width="70" height="36" rx="6"/>
+  <text x="175" y="248">职员5 (3)</text>
+
+  <path class="flow" d="M 180 240 C 220 210 230 200 245 184"/>
+  <text class="lbl" x="330" y="248">孩子算完 → 汇进父亲：</text>
+  <text class="note" x="330" y="272">选父亲 = r + Σ孩子「不选」</text>
+  <text class="note" x="330" y="294">不选父亲 = Σ max(孩子选, 孩子不选)</text>
+
+  <text class="rave" x="560" y="90" text-anchor="middle">验证职员 1：</text>
+  <text class="note" x="560" y="115" text-anchor="middle">不选 = max(选2,不选2)+max(选3,不选3)</text>
+  <text class="note" x="560" y="138" text-anchor="middle">= max(5,4)+max(4,0) = 9</text>
+  <text class="note" x="560" y="161" text-anchor="middle">选 = 2 + 不选2 + 不选3 = 2+4+0 = 6</text>
+  <text class="note" x="560" y="184" text-anchor="middle">答案 = 根的 max(9, 6) = 9</text>
+  <text class="note" x="560" y="216" text-anchor="middle">「上司来就不带下属」</text>
+  <text class="note" x="560" y="238" text-anchor="middle">—— 邻居互斥的状态设计</text>
+  <text class="note" x="560" y="260" text-anchor="middle">就是树形 DP 的灵魂</text>
+</svg>

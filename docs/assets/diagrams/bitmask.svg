@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" font-family="'Noto Sans SC', 'Microsoft YaHei', sans-serif">
+  <style>
+    text { font-size: 14px; fill: #1d1d20; }
+    .cell { fill: #fff; stroke: #55aea6; stroke-width: 1.6; }
+    .king { fill: #55aea6; }
+    .king text { fill: #fff; }
+    .cell text, .king text { text-anchor: middle; font-family: Consolas, monospace; font-size: 15px; }
+    .bad { opacity: 0.25; }
+    .bits { font-family: Consolas, monospace; font-size: 15px; }
+    .note { fill: #999; font-size: 13px; }
+    .lbl { fill: #3d8d86; font-size: 13.5px; font-weight: bold; }
+    .cut { stroke: #e67e22; stroke-width: 2; }
+  </style>
+  <rect x="0" y="0" width="720" height="300" rx="10" fill="#f5f5f5"/>
+
+  <text x="360" y="34" text-anchor="middle" font-weight="bold">状压 DP：一整行放不放国王，压缩成一个二进制数</text>
+
+  <g>
+    <rect class="cell" x="70" y="60" width="56" height="56"/>
+    <rect class="cell" x="126" y="60" width="56" height="56"/>
+    <rect class="cell" x="182" y="60" width="56" height="56"/>
+    <rect class="king" x="238" y="60" width="56" height="56"/>
+    <text x="275" y="95">王</text>
+    <rect class="cell" x="294" y="60" width="56" height="56"/>
+    <rect class="cell" x="350" y="60" width="56" height="56"/>
+    <text class="lbl" x="420" y="95">→ 0 0 0 1 0 0 = (4)₂ = 4</text>
+  </g>
+
+  <g class="bad">
+    <rect class="cell" x="70" y="150" width="56" height="56"/>
+    <text x="98" y="185">王</text>
+    <rect class="cell" x="126" y="150" width="56" height="56"/>
+    <text x="154" y="185">王</text>
+    <rect class="cell" x="182" y="150" width="56" height="56"/>
+    <rect class="cell" x="238" y="150" width="56" height="56"/>
+    <rect class="cell" x="294" y="150" width="56" height="56"/>
+    <rect class="cell" x="350" y="150" width="56" height="56"/>
+  </g>
+  <text class="lbl" x="420" y="185">→ 0 1 1 0 0 0 = 6：非法！相邻冲突</text>
+
+  <text class="note" x="360" y="240" text-anchor="middle">一行 n 格共 2ⁿ 个状态（n≤20 才扛得住）；n=6 时 64 种，先筛掉「行内相邻」的非法状态</text>
+  <text class="note" x="360" y="268" text-anchor="middle">行间冲突检查只用三个位运算：s &amp; t（同列）、(s&lt;&lt;1) &amp; t（右上斜）、(t&lt;&lt;1) &amp; s（左上斜）</text>
+  <text class="note" x="360" y="294" text-anchor="middle">f[第 i 行][状态 s][已放 k 个] 由 f[第 i-1 行][t][k-cnt(s)] 转移而来 —— t 就是上一行的状态</text>
+</svg>

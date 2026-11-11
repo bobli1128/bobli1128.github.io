@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" font-family="'Noto Sans SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#666"/>
+    </marker>
+    <marker id="arrO" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#e67e22"/>
+    </marker>
+  </defs>
+  <style>
+    text { font-size: 14px; fill: #1d1d20; }
+    .cell { fill: #fff; stroke: #55aea6; stroke-width: 1.6; }
+    .cell text { text-anchor: middle; font-family: Consolas, monospace; font-size: 15px; }
+    .idx { fill: #999; font-size: 13px; }
+    .arc1 { stroke: #55aea6; stroke-width: 2; fill: none; }
+    .arc2 { stroke: #3d8d86; stroke-width: 2; fill: none; }
+    .arc3 { stroke: #e67e22; stroke-width: 2; fill: none; marker-end: url(#arrO); }
+    .note { fill: #999; font-size: 13px; }
+    .lbl { fill: #3d8d86; font-size: 13.5px; font-weight: bold; }
+  </style>
+  <rect x="0" y="0" width="720" height="300" rx="10" fill="#f5f5f5"/>
+
+  <text x="360" y="34" text-anchor="middle" font-weight="bold">石子合并：f[1][4] 由三种「最后一步」拼出</text>
+
+  <g>
+    <rect class="cell" x="110" y="70" width="90" height="46"/>
+    <text x="155" y="100">1</text>
+    <rect class="cell" x="200" y="70" width="90" height="46"/>
+    <text x="245" y="100">3</text>
+    <rect class="cell" x="290" y="70" width="90" height="46"/>
+    <text x="335" y="100">5</text>
+    <rect class="cell" x="380" y="70" width="90" height="46"/>
+    <text x="425" y="100">2</text>
+    <text class="idx" x="155" y="134" text-anchor="middle">1 号堆</text>
+    <text class="idx" x="245" y="134" text-anchor="middle">2 号堆</text>
+    <text class="idx" x="335" y="134" text-anchor="middle">3 号堆</text>
+    <text class="idx" x="425" y="134" text-anchor="middle">4 号堆</text>
+  </g>
+
+  <path class="arc1" d="M 155 170 C 155 205 245 205 245 170"/>
+  <text class="lbl" x="200" y="222" text-anchor="middle">f[1][2]</text>
+  <path class="arc2" d="M 200 175 C 200 230 425 230 425 175"/>
+  <text class="lbl" x="312" y="248" text-anchor="middle">f[2][4]</text>
+  <path class="arc3" d="M 155 165 C 155 260 425 260 425 165"/>
+  <text class="lbl" x="480" y="200">f[1][4] = min 三种分法 + 合并总代价</text>
+
+  <text class="note" x="360" y="282" text-anchor="middle">小区间（长度2）→ 长度3 → 长度4，按区间长度从小到大填；每个大区间枚举「分割点 k」取最优</text>
+</svg>
