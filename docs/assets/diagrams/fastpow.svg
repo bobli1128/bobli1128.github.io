@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" font-family="'Noto Sans SC', 'Microsoft YaHei', sans-serif">
+  <style>
+    text { font-size: 14px; fill: #1d1d20; }
+    .cell { fill: #fff; stroke: #55aea6; stroke-width: 1.5; }
+    .cell text { text-anchor: middle; font-family: Consolas, monospace; font-size: 15px; }
+    .use { fill: #e0f2f0; stroke: #3d8d86; stroke-width: 2; }
+    .use text { font-weight: bold; }
+    .skip { opacity: 0.25; }
+    .bits { font-family: Consolas, monospace; font-size: 14px; }
+    .note { fill: #999; font-size: 13px; }
+    .lbl { fill: #3d8d86; font-size: 13.5px; font-weight: bold; }
+    .code { font-family: Consolas, monospace; font-size: 14px; }
+  </style>
+  <rect x="0" y="0" width="720" height="300" rx="10" fill="#f5f5f5"/>
+
+  <text x="360" y="32" text-anchor="middle" font-weight="bold">快速幂：x^13 —— 指数的二进制决定「哪些平方结果被乘进答案」</text>
+
+  <text class="lbl" x="70" y="70">13 = (1101)₂ = 8 + 4 + 1：</text>
+
+  <g>
+    <rect class="cell skip" x="60"  y="85" width="90" height="42"/>
+    <text x="105" y="111">x¹</text>
+    <rect class="cell" x="150" y="85" width="90" height="42"/>
+    <text x="195" y="111">x²</text>
+    <rect class="cell skip" x="240" y="85" width="90" height="42"/>
+    <text x="285" y="111">x⁴</text>
+    <rect class="cell use" x="330" y="85" width="90" height="42"/>
+    <text x="375" y="111">x⁸</text>
+    <rect class="cell use" x="420" y="85" width="90" height="42"/>
+    <text x="465" y="111">x⁴</text>
+    <rect class="cell skip" x="510" y="85" width="90" height="42"/>
+    <text x="555" y="111">x²</text>
+    <rect class="cell use" x="600" y="85" width="90" height="42"/>
+    <text x="645" y="111">x¹</text>
+  </g>
+  <text class="note" x="360" y="150" text-anchor="middle">灰色 = 该二进制位为 0，跳过；绿色 = 该位为 1，乘进答案。x² → x⁴ → x⁸ 每步「自乘」得到。</text>
+
+  <text class="code" x="360" y="195" text-anchor="middle">while (b) { if (b &amp; 1) ans = ans * base % p;  base = base * base % p;  b &gt;&gt;= 1; }</text>
+
+  <text class="note" x="360" y="240" text-anchor="middle">朴素连乘 x¹³ 要 12 次乘法；快速幂只要 6 次（3 次平方 + 3 次乘答案）。O(log b)</text>
+  <text class="note" x="360" y="268" text-anchor="middle">实战价值：b = 10⁹ 时连乘 = 10⁹ 次（超时），快速幂 ≈ 30 次 —— 差了三千万倍</text>
+  <text class="note" x="360" y="294" text-anchor="middle">每步都取模：中间结果永远 &lt; p²，long long 装得下（这也是 p ≤ 10⁹ 的原因）</text>
+</svg>

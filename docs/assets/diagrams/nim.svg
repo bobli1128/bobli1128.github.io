@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" font-family="'Noto Sans SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#e67e22"/>
+    </marker>
+  </defs>
+  <style>
+    text { font-size: 14px; fill: #1d1d20; }
+    .pile { fill: #fff; stroke: #55aea6; stroke-width: 1.6; }
+    .pile text { text-anchor: middle; font-family: Consolas, monospace; font-size: 14px; }
+    .stone { fill: #55aea6; }
+    .stone text { fill: #fff; }
+    .flow { stroke: #e67e22; stroke-width: 1.8; fill: none; marker-end: url(#arr); }
+    .note { fill: #999; font-size: 13px; }
+    .lbl { fill: #3d8d86; font-size: 13.5px; font-weight: bold; }
+    .win { fill: #e67e22; font-size: 14px; font-weight: bold; }
+    .code { font-family: Consolas, monospace; font-size: 14.5px; }
+  </style>
+  <rect x="0" y="0" width="720" height="300" rx="10" fill="#f5f5f5"/>
+
+  <text x="360" y="32" text-anchor="middle" font-weight="bold">NIM 游戏：三堆石子，异或和 = 0 则先手必败</text>
+
+  <g>
+    <rect class="pile" x="90"  y="70" width="120" height="40"/>
+    <text x="150" y="96">第 1 堆: 3</text>
+    <rect class="stone" x="110" y="115" width="80" height="18"/>
+    <text x="150" y="129">石石石</text>
+  </g>
+  <g>
+    <rect class="pile" x="300" y="70" width="120" height="40"/>
+    <text x="360" y="96">第 2 堆: 4</text>
+    <rect class="stone" x="310" y="115" width="100" height="18"/>
+    <text x="360" y="129">石石石石</text>
+  </g>
+  <g>
+    <rect class="pile" x="510" y="70" width="120" height="40"/>
+    <text x="570" y="96">第 3 堆: 5</text>
+    <rect class="stone" x="520" y="115" width="100" height="18"/>
+    <text x="570" y="129">石石石石石</text>
+  </g>
+
+  <text class="code" x="360" y="172" text-anchor="middle">3 ⊕ 4 ⊕ 5 = 011 ⊕ 100 ⊕ 101 = 010 ≠ 0</text>
+
+  <text class="win" x="360" y="208" text-anchor="middle">异或和 ≠ 0 → 先手必胜！</text>
+
+  <text class="lbl" x="360" y="240" text-anchor="middle">必胜策略：把某堆拿走一些，让异或和变成 0（例：第 1 堆 3 → 1，此时 1⊕4⊕5 = 0）</text>
+
+  <text class="note" x="360" y="270" text-anchor="middle">此后无论对手怎么拿，异或和必然非零 —— 你总能再把它变回 0；终局（全空）异或和为 0，归先手变零的一方拿走</text>
+  <text class="note" x="360" y="294" text-anchor="middle">结论：多堆对称博弈看「平衡态」—— 异或和为 0 是「谁面对谁输」的必败态</text>
+</svg>

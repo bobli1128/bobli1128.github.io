@@ -152,6 +152,11 @@ nav:
           - 倍增与 ST 表: adv-search/doubling.md
       - 第 15 章 · 竞赛数学进阶:
           - adv-math/index.md
+          - 快速幂与取模运算: adv-math/fastpow.md
+          - 线性筛与质因数分解: adv-math/sieve-factor.md
+          - 扩展欧几里得与逆元: adv-math/exgcd-inv.md
+          - 组合数学进阶: adv-math/comb-app.md
+          - 博弈论入门: adv-math/game.md
   - 备赛指南:
       - contest/index.md
   - 关于本站:
