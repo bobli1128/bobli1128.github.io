@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 280" font-family="'Noto Sans SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#e67e22"/>
+    </marker>
+  </defs>
+  <style>
+    text { font-size: 14px; fill: #1d1d20; }
+    .cell { fill: #fff; stroke: #55aea6; stroke-width: 1.5; }
+    .cell text { text-anchor: middle; font-family: Consolas, monospace; font-size: 15px; }
+    .seg { fill: #e0f2f0; stroke: #3d8d86; stroke-width: 1.5; }
+    .idx { fill: #999; font-size: 12.5px; }
+    .flow { stroke: #e67e22; stroke-width: 2; fill: none; marker-end: url(#arr); }
+    .note { fill: #999; font-size: 13px; }
+    .lbl { fill: #3d8d86; font-size: 13.5px; font-weight: bold; }
+    .code { font-family: Consolas, monospace; font-size: 14px; }
+  </style>
+  <rect x="0" y="0" width="720" height="280" rx="10" fill="#f5f5f5"/>
+
+  <text x="360" y="32" text-anchor="middle" font-weight="bold">前缀哈希：h[i] = s 前 i 个字符的「指纹」，两步算出任意子串指纹</text>
+
+  <g>
+    <rect class="cell" x="120" y="55" width="70" height="46"/>
+    <text x="155" y="83">a</text>
+    <rect class="cell" x="190" y="55" width="70" height="46"/>
+    <text x="225" y="83">b</text>
+    <rect class="cell" x="260" y="55" width="70" height="46"/>
+    <text x="295" y="83">c</text>
+    <rect class="cell" x="330" y="55" width="70" height="46"/>
+    <text x="365" y="83">a</text>
+    <rect class="cell" x="400" y="55" width="70" height="46"/>
+    <text x="435" y="83">b</text>
+    <rect class="cell" x="470" y="55" width="70" height="46"/>
+    <text x="505" y="83">c</text>
+    <text class="idx" x="155" y="118" text-anchor="middle">1</text>
+    <text class="idx" x="225" y="118" text-anchor="middle">2</text>
+    <text class="idx" x="295" y="118" text-anchor="middle">3</text>
+    <text class="idx" x="365" y="118" text-anchor="middle">4</text>
+    <text class="idx" x="435" y="118" text-anchor="middle">5</text>
+    <text class="idx" x="505" y="118" text-anchor="middle">6</text>
+  </g>
+
+  <g>
+    <rect class="seg" x="400" y="55" width="140" height="46" fill="none" stroke="#e67e22" stroke-width="2.5"/>
+  </g>
+  <text class="lblO" x="470" y="142" text-anchor="middle">子串 s[5..6] = "bc" 的指纹</text>
+
+  <line class="flow" x1="470" y1="152" x2="470" y2="180"/>
+  <text class="code" x="470" y="208" text-anchor="middle">hash = h[6] − h[4] × B²</text>
+  <text class="note" x="470" y="232" text-anchor="middle">（B 是进制，× B² 把「高位余子」对齐后减掉）</text>
+
+  <text class="lbl" x="150" y="180">为什么好用？</text>
+  <text class="note" x="150" y="206">预处理好 h[] 后，任意两个子串</text>
+  <text class="note" x="150" y="230">相等 ⇔ 指纹相等 —— O(1) 判等</text>
+  <text class="note" x="150" y="254">「比较两个子串」从 O(n) 变 O(1)</text>
+</svg>

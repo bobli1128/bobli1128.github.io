@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" font-family="'Noto Sans SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#e67e22"/>
+    </marker>
+  </defs>
+  <style>
+    text { font-size: 14px; fill: #1d1d20; }
+    .cell { fill: #fff; stroke: #55aea6; stroke-width: 1.5; }
+    .cell text { text-anchor: middle; font-family: Consolas, monospace; font-size: 16px; }
+    .match { fill: #e0f2f0; stroke: #3d8d86; stroke-width: 1.5; }
+    .fail { fill: #ffe9c9; stroke: #e67e22; stroke-width: 2; }
+    .idx { fill: #999; font-size: 12.5px; }
+    .flow { stroke: #e67e22; stroke-width: 2; fill: none; marker-end: url(#arr); }
+    .bracket { stroke: #3d8d86; stroke-width: 1.8; fill: none; }
+    .lbl { fill: #3d8d86; font-size: 13.5px; font-weight: bold; }
+    .lblO { fill: #e67e22; font-size: 13.5px; font-weight: bold; }
+    .note { fill: #999; font-size: 13px; }
+  </style>
+  <rect x="0" y="0" width="720" height="300" rx="10" fill="#f5f5f5"/>
+
+  <text x="360" y="32" text-anchor="middle" font-weight="bold">模式串 ABAB 匹配失败，j 跳到 next[4]=2 —— 前后缀重合！</text>
+
+  <text class="lbl" x="80" y="90">文本串</text>
+  <g>
+    <rect class="match" x="150" y="62" width="46" height="44"/>
+    <text x="173" y="90">A</text>
+    <rect class="match" x="196" y="62" width="46" height="44"/>
+    <text x="219" y="90">B</text>
+    <rect class="match" x="242" y="62" width="46" height="44"/>
+    <text x="265" y="90">A</text>
+    <rect class="match" x="288" y="62" width="46" height="44"/>
+    <text x="311" y="90">B</text>
+    <rect class="fail" x="334" y="62" width="46" height="44"/>
+    <text x="357" y="90">?</text>
+    <rect class="cell" x="380" y="62" width="46" height="44"/>
+    <text x="403" y="90">A</text>
+    <rect class="cell" x="426" y="62" width="46" height="44"/>
+    <text x="449" y="90">B</text>
+    <rect class="cell" x="472" y="62" width="46" height="44"/>
+    <text x="495" y="90">A</text>
+    <rect class="cell" x="518" y="62" width="46" height="44"/>
+    <text x="541" y="90">C</text>
+    <rect class="cell" x="564" y="62" width="46" height="44"/>
+    <text x="587" y="90">A</text>
+    <rect class="cell" x="610" y="62" width="46" height="44"/>
+    <text x="633" y="90">B</text>
+  </g>
+
+  <text class="lbl" x="80" y="180">模式串</text>
+  <g transform="translate(242, 152)">
+    <rect class="cell" x="0" y="0" width="46" height="44"/>
+    <text x="23" y="28">A</text>
+    <rect class="cell" x="46" y="0" width="46" height="44"/>
+    <text x="69" y="28">B</text>
+    <rect class="cell" x="92" y="0" width="46" height="44"/>
+    <text x="115" y="28">A</text>
+    <rect class="fail" x="138" y="0" width="46" height="44"/>
+    <text x="161" y="28">B</text>
+    <rect class="cell" x="184" y="0" width="46" height="44" opacity="0.35"/>
+    <text x="207" y="28">C</text>
+  </g>
+  <text class="idx" x="265" y="218" text-anchor="middle">已匹配前 3 个</text>
+  <text class="idx" x="383" y="218" text-anchor="middle">第 4 位失配（文本是 ?，模式要 C）</text>
+
+  <path class="flow" d="M 452 152 C 500 230 340 230 295 200"/>
+  <text class="lblO" x="150" y="245">跳转：j = next[4] = 2，模式串右移 2 格</text>
+
+  <g transform="translate(334, 152)">
+    <rect class="match" x="0" y="44" width="46" height="34" opacity="0.9"/>
+    <text x="23" y="66">A</text>
+    <rect class="match" x="46" y="44" width="46" height="34" opacity="0.9"/>
+    <text x="69" y="66">B</text>
+  </g>
+  <text class="lbl" x="700" y="170" text-anchor="end">模式串的「AB」前缀</text>
+  <text class="lbl" x="700" y="190" text-anchor="end">对准文本串刚匹配过的后缀</text>
+  <text class="note" x="360" y="290" text-anchor="middle">next[j] = 最长「真前缀 = 真后缀」长度 —— 失配时不回头，直接续上已知信息</text>
+</svg>

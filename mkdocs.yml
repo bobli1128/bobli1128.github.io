@@ -141,6 +141,9 @@ nav:
           - 状压 DP: adv-dp/bitmask-dp.md
       - 第 13 章 · 字符串算法:
           - stralgo/index.md
+          - KMP 算法: stralgo/kmp.md
+          - 字符串哈希: stralgo/string-hash.md
+          - 回文专题: stralgo/palindrome.md
       - 第 14 章 · 搜索与优化进阶:
           - adv-search/index.md
       - 第 15 章 · 竞赛数学进阶:
