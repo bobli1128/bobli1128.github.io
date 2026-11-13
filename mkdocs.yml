@@ -146,6 +146,10 @@ nav:
           - 回文专题: stralgo/palindrome.md
       - 第 14 章 · 搜索与优化进阶:
           - adv-search/index.md
+          - 剪枝进阶: adv-search/prune.md
+          - 迭代加深与双向搜索: adv-search/iterdeep.md
+          - 分治: adv-search/divide.md
+          - 倍增与 ST 表: adv-search/doubling.md
       - 第 15 章 · 竞赛数学进阶:
           - adv-math/index.md
   - 备赛指南:

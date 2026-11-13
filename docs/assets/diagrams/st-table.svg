@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" font-family="'Noto Sans SC', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#e67e22"/>
+    </marker>
+  </defs>
+  <style>
+    text { font-size: 14px; fill: #1d1d20; }
+    .cell { fill: #fff; stroke: #55aea6; stroke-width: 1.4; }
+    .cell text { text-anchor: middle; font-family: Consolas, monospace; font-size: 14px; }
+    .k1 { fill: #e0f2f0; stroke: #3d8d86; stroke-width: 1.8; }
+    .k2 { fill: #ffe9c9; stroke: #e67e22; stroke-width: 1.8; }
+    .k3 { fill: #d8f0ee; stroke: #55aea6; stroke-width: 1.8; }
+    .idx { fill: #999; font-size: 13px; }
+    .flow { stroke: #e67e22; stroke-width: 1.8; fill: none; marker-end: url(#arr); }
+    .note { fill: #999; font-size: 13px; }
+    .lbl { fill: #3d8d86; font-size: 13.5px; font-weight: bold; }
+    .code { font-family: Consolas, monospace; font-size: 14px; }
+  </style>
+  <rect x="0" y="0" width="720" height="300" rx="10" fill="#f5f5f5"/>
+
+  <text x="360" y="32" text-anchor="middle" font-weight="bold">ST 表：预先存好「每个 2^k 长度」的区间最值</text>
+
+  <text class="lbl" x="60" y="70">a[]:</text>
+  <g>
+    <rect class="cell" x="110" y="50" width="66" height="40"/>
+    <text x="143" y="76">3</text>
+    <rect class="cell" x="176" y="50" width="66" height="40"/>
+    <text x="209" y="76">1</text>
+    <rect class="cell" x="242" y="50" width="66" height="40"/>
+    <text x="275" y="76">5</text>
+    <rect class="cell" x="308" y="50" width="66" height="40"/>
+    <text x="341" y="76">2</text>
+    <rect class="cell" x="374" y="50" width="66" height="40"/>
+    <text x="407" y="76">4</text>
+    <rect class="cell" x="440" y="50" width="66" height="40"/>
+    <text x="473" y="76">6</text>
+    <text class="idx" x="143" y="106" text-anchor="middle">1</text>
+    <text class="idx" x="209" y="106" text-anchor="middle">2</text>
+    <text class="idx" x="275" y="106" text-anchor="middle">3</text>
+    <text class="idx" x="341" y="106" text-anchor="middle">4</text>
+    <text class="idx" x="407" y="106" text-anchor="middle">5</text>
+    <text class="idx" x="473" y="106" text-anchor="middle">6</text>
+  </g>
+
+  <text class="lbl" x="60" y="150">查询 [2,6] 的最大值 = 两块 4 长区间拼合（允许重叠）：</text>
+
+  <g>
+    <rect class="k1" x="176" y="165" width="132" height="40"/>
+    <text x="242" y="191">max(1,5,2,4)=5</text>
+    <rect class="k2" x="308" y="165" width="132" height="40"/>
+    <text x="374" y="191">max(5,2,4,6)=6</text>
+    <text class="idx" x="242" y="221" text-anchor="middle">st[2][2]: 从 2 起长 4</text>
+    <text class="idx" x="374" y="221" text-anchor="middle">st[3][2]: 从 3 起长 4</text>
+  </g>
+
+  <line class="flow" x1="374" y1="165" x2="308" y2="165"/>
+  <text class="code" x="360" y="255" text-anchor="middle">ans = max(st[2][2], st[3][2]) = max(5, 6) = 6　（重叠部分重复取 max 无妨）</text>
+
+  <text class="note" x="360" y="285" text-anchor="middle">预处理 O(n log n)：st[k][i] 由相邻两块 st[k-1] 取 max；查询 O(1)。sum 不行（重叠会算重）→ 可减用树状数组，不可减（max/gcd）用 ST 表</text>
+</svg>

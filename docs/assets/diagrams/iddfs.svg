@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" font-family="'Noto Sans SC', 'Microsoft YaHei', sans-serif">
+  <style>
+    text { font-size: 14px; fill: #1d1d20; }
+    .ring1 { fill: none; stroke: #b7dcd8; stroke-width: 2; }
+    .ring2 { fill: none; stroke: #7cc8c0; stroke-width: 2; }
+    .ring3 { fill: none; stroke: #55aea6; stroke-width: 2.5; }
+    .target { fill: #e67e22; }
+    .target text { fill: #fff; font-size: 12px; text-anchor: middle; }
+    .lbl { fill: #3d8d86; font-size: 13.5px; font-weight: bold; }
+    .lblO { fill: #e67e22; font-size: 13.5px; font-weight: bold; }
+    .note { fill: #999; font-size: 13px; }
+  </style>
+  <rect x="0" y="0" width="720" height="320" rx="10" fill="#f5f5f5"/>
+
+  <text x="360" y="32" text-anchor="middle" font-weight="bold">迭代加深：限制深度逐层放开，深度小、开销小的分支先查完</text>
+
+  <circle cx="120" cy="180" r="55" class="ring1"/>
+  <text class="lbl" x="120" y="118" text-anchor="middle">限深 1</text>
+  <circle cx="120" cy="180" r="95" class="ring2"/>
+  <text class="lbl" x="120" y="80" text-anchor="middle">限深 2</text>
+  <circle cx="120" cy="180" r="135" class="ring3"/>
+  <text class="lbl" x="120" y="42" text-anchor="middle">限深 3 → 找到答案!</text>
+
+  <circle class="target" cx="230" cy="120" r="30"/>
+  <text x="230" y="116">解在</text>
+  <text x="230" y="132">深度 3</text>
+
+  <text class="lblO" x="430" y="90">为什么不用 BFS？</text>
+  <text class="note" x="430" y="118">解空间的「宽度」是指数级的，BFS 在浅层就要</text>
+  <text class="note" x="430" y="142">存下海量状态（内存爆炸）；DFS 只留一条路径。</text>
+
+  <text class="lblO" x="430" y="190">为什么重复搜索不亏？</text>
+  <text class="note" x="430" y="218">指数增长的树中，绝大多数节点在最深层 ——</text>
+  <text class="note" x="430" y="242">浅层重复的开销占比可忽略（二叉树：最后一层</text>
+  <text class="note" x="430" y="266">占了超过一半节点）。</text>
+
+  <text class="note" x="360" y="305" text-anchor="middle">适用信号：「求最少步数/最少项数」+ 「搜索树宽到 BFS 存不下」→ 迭代加深 DFS（IDDFS）</text>
+</svg>
